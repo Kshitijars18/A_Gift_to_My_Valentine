@@ -1,0 +1,73 @@
+/* Your original CSS mostly stays the same */
+.center {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+  padding: 0 5vw;
+  text-align: center;
+}
+
+.center img {
+  width: 30%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Updated paragraph styling to wrap text nicely */
+.center p {
+  font-size: 2vw;
+  max-font-size: 24px;
+  color: #e3216c;
+  margin: 0;
+
+  /* NEW ADDITIONS */
+  max-width: 600px;       /* restrict width for better readability */
+  line-height: 1.5;       /* improve line spacing */
+  word-wrap: break-word;   /* wrap long text properly */
+  text-align: center;      /* ensure centered text */
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.flex-container div {
+  margin: 10px;
+  padding: 20px;
+  flex: 1 1 200px;
+}
+
+
+/* smooth NO button movement & YES scaling */
+.run-btn {
+  position: relative; /* normal layout initially */
+  transition: left 0.2s ease, top 0.2s ease, transform 0.3s ease;
+}
+
+/* ---------------------- */
+/* MOBILE SPECIFIC STYLES */
+/* ---------------------- */
+@media (max-width: 768px) {
+  .center p {
+    color: #e3216c;
+    font-size: 5vw; /* text larger on small screens */
+    max-width: 90%; /* allow more room on mobile */
+    line-height: 1.4; /* slightly tighter line spacing for small screens */
+  }
+
+  .flex-container {
+    flex-direction: column;
+  }
+
+  button {
+    font-size: 3vw; /* buttons readable and tappable */
+    min-width: 90px;
+    padding: 0.6em 1.2em;
+  }
+}

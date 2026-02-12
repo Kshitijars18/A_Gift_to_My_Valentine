@@ -1,0 +1,16 @@
+<div class="center">
+  <img src="./assets/heart.gif" alt="Ask you GIF">
+  <p>❤️❤️Will you be my Valentine?❤️❤️</p>
+
+  <div class="button-group">
+    <button #yesBtn (click)="goTothankyou()">YES 😍!</button>
+    <button
+      #runBtn
+      class="run-btn"
+      (mouseenter)="moveButton()"
+      (touchstart)="moveButton()"
+    >
+      No 😒!
+    </button>
+  </div>
+</div>

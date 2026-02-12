@@ -1,0 +1,126 @@
+/* Your original CSS mostly stays the same */
+.center {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+  padding: 0 5vw;
+  text-align: center;
+}
+
+.center img {
+  width: 30%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.center p {
+  font-size: 2vw;
+  max-font-size: 24px;
+  color: #e3216c;
+  margin: 0;
+}
+
+.button-group button:not(.run-btn) {
+  background: linear-gradient(135deg, #56ab2f, #a8e063);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-group button:not(.run-btn):hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 128, 0, 0.3);
+}
+
+.run-btn {
+  background: linear-gradient(135deg, #ff2356, #ff0000);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.run-btn:hover {
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  position: relative; /* for NO button positioning */
+  flex-wrap: wrap;    /* allows buttons to wrap on small screens */
+  justify-content: center;
+}
+
+button {
+  height: 6vh;
+  max-height: 3rem;
+  background: linear-gradient(135deg, #FF69B4, #FF1493);
+  color: white;
+  border: none;
+  border-radius: 2rem;
+  font-weight: medium;
+  font-size: 1.5vw;
+  max-font-size: 2rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  padding: 0.5em 1.5em;
+  white-space: nowrap;
+
+  /* NEW: center text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+button:hover {
+  box-shadow: 4px 4px 15px rgba(0,0,0,0.5);
+  transform: translateY(-2px);
+}
+
+/* smooth NO button movement & YES scaling */
+.run-btn {
+  position: relative; /* normal layout initially */
+  transition: left 0.2s ease, top 0.2s ease, transform 0.3s ease;
+}
+
+/* ---------------------- */
+/* MOBILE SPECIFIC STYLES */
+/* ---------------------- */
+@media (max-width: 768px) {
+  .center p {
+    color: #e3216c;
+    font-size: 4vw; /* make text bigger and readable on small screens */
+  }
+
+   button {
+        font-size: 3vw;
+        min-width: 157px;
+        padding: 0.7em 1.3em;
+        width: 211px;
+        height: 95px;
+        min-height: 67px;
+  }
+  
+  .center img {
+    width: 60%;           /* slightly bigger image for mobile */
+    max-width: 250px;
+  }
+
+}
